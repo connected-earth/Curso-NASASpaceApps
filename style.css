@@ -1,0 +1,164 @@
+/* ----- 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS DE COR ----- */
+:root {
+    --color-background: #12121c;
+    --color-text: #e0e0e0;
+    --color-primary: #3d7ad6;
+    --color-nav-bg: #1e1e2c;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* ----- 2. NAVEGAÇÃO (Usada em todas as páginas) ----- */
+.main-nav {
+    background-color: var(--color-nav-bg);
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.main-nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.main-nav a:hover, .main-nav a.active {
+    background-color: var(--color-primary);
+}
+.main-nav a.active {
+    font-weight: bold;
+}
+
+/* ----- 3. ESTILO DA PÁGINA INICIAL (index.html) ----- */
+body.home-page main {
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.welcome-container {
+    background-color: rgba(0,0,0,0.6);
+    padding: 2rem 4rem;
+    border-radius: 8px;
+}
+.welcome-container h1 { 
+    font-size: 3rem; 
+    color: var(--color-primary); 
+}
+.welcome-container p {
+    font-size: 1.2rem;
+}
+
+/* ----- 4. ESTILO DAS PÁGINAS DE CONTEÚDO (air-quality.html, earth.html) ----- */
+.content-page {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+.content-page h2 {
+    text-align: center;
+    margin-bottom: 2rem; /* Aumentado para dar mais espaço */
+    color: var(--color-primary);
+}
+
+/* ----- 5. ESTILOS DO GRÁFICO (air-quality.html) ----- */
+.aqi-chart-container {
+    background-color: var(--color-nav-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+}
+.chart-row {
+    margin-bottom: 1.2rem;
+}
+.row-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.city-name {
+    font-weight: bold;
+}
+.indicator-text {
+    color: #aaa;
+}
+.row-bar {
+    background-color: #333;
+    border-radius: 5px;
+}
+.bar-value {
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 5px;
+    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.bar-value span {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Cores da barra de valor */
+.bar-value.good { background-color: #2a9d8f; }
+.bar-value.moderate { background-color: #e9c46a; }
+.bar-value.unhealthy-sensitive { background-color: #f4a261; }
+.bar-value.unhealthy { background-color: #e76f51; }
+.bar-value.very-unhealthy { background-color: #d62828; }
+.bar-value.hazardous { background-color: #a050f0; }
+
+
+body.home-page main {
+    /* Sets the initial background image */
+    background-image: url('assets/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Adds a smooth transition effect when the background image changes */
+    transition: background-image 0.8s ease-in-out;
+}
+
+/* Style for the new button */
+.change-bg-btn {
+    margin-top: 1.5rem; /* Adds space above the button */
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-text);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* A little effect when hovering over the button */
+.change-bg-btn:hover {
+    background-color: #5a95e6; /* A slightly lighter blue */
+    transform: scale(1.05); /* Makes the button slightly larger */
+}
