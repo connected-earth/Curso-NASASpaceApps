@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'assets/bg5.jpg',
         'assets/bg6.jpg',
         'assets/bg7.jpg',
+        'assets/bg8.jpg',
     ];
 
     const changeBgButton = document.getElementById('change-bg-btn');
